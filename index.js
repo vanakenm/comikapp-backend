@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 
 // import routes
 import recipeRoutes from './routes/recipe.js';
+import comicRoutes from './routes/comic.js';
 
 // set port
 const PORT = process.env.PORT || 5000;
@@ -42,6 +43,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(recipeRoutes);
+app.use(comicRoutes);
 
 // error
 app.use((err, req, res, next) => {
