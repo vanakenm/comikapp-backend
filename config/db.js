@@ -17,6 +17,7 @@ const query = async (sql, values) => {
         const [results] = await connection.query(sql, values);
         return results;
     } catch (err) {
+        console.error('Error executing query:', err);
         return err;
     } finally {
         if (connection) {
