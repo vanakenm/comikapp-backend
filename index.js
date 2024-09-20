@@ -45,6 +45,10 @@ app.use(function (req, res, next) {
 app.use(recipeRoutes);
 app.use(comicRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 // error
 app.use((err, req, res, next) => {
     console.error(err);
@@ -60,5 +64,3 @@ app.use('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is up and running on port : ${PORT}`);
 });
-
-module.exports = app;
